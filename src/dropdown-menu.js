@@ -1,19 +1,21 @@
-export default function dropdownMenu(pNode, ...contents) {
-  const menu = document.createElement('div');
-  menu.style.visibility = 'collapse';
+export default function dropdownMenu(title, pNode, ...contents) {
+  const menuContainer = document.createElement('div');
+  menuContainer.style.visibility = 'collapse';
 
   const parent = pNode;
 
-  // Make menu collapsable on clicking
+  // Make menuContainer collapsable on clicking
   parent.onclick = () => {
-    const value = menu.style.visibility === 'collapse' ? 'visible' : 'collapse';
-    menu.style.visibility = value;
+    const value =
+      menuContainer.style.visibility === 'collapse' ? 'visible' : 'collapse';
+    menuContainer.style.visibility = value;
   };
-  const title = document.createElement('div');
-  title.textContent = 'Menu Title';
-  menu.appendChild(title);
+  const container = document.createElement('div');
+  container.textContent = title;
+  menuContainer.appendChild(container);
   [...contents].forEach((element) => {
-    menu.appendChild(element);
+    element.classlist.add('dropdown-item');
+    menuContainer.appendChild(element);
   });
-  parent.parentNode.appendChild(menu);
+  parent.parentNode.appendChild(menuContainer);
 }

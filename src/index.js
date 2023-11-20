@@ -10,4 +10,4 @@ const h1 = new DOMParser()
   .querySelector('h1');
 
 document.body.appendChild(h1);
-dropdownMenu(h1);
+dropdownMenu('Dropdown Menu', document.querySelector('body'));
