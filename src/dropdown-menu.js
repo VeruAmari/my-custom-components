@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /*
 function dropdownMenu(title, pNode, ...contents) {
   const menuContainer = document.createElement('div');
@@ -21,10 +22,25 @@ function dropdownMenu(title, pNode, ...contents) {
   parent.parentNode.appendChild(menuContainer);
 }
 */
-export default function applyDropdown(selector) {
-  document.querySelectorAll(selector).forEach((element)=>{
-    const dropdown = element;
-    dropdown.onclick = dropdown.classlist.toggle("hidden");
-  
+
+export default function applyDropdown(selector, height) {
+  document.querySelectorAll(selector).forEach((element) => {
+    console.log(element);
+    Array.from(element.children).forEach((child) => {
+      child.style.height = 0;
+      child.style.visibility = 'hidden';
+    });
+    element.onmouseover = () => {
+      Array.from(element.children).forEach((child) => {
+        child.style.height = height;
+        child.style.visibility = 'visible';
+      });
+    };
+    element.onmouseout = () => {
+      Array.from(element.children).forEach((child) => {
+        child.style.height = 0;
+        child.style.visibility = 'hidden';
+      });
+    };
   });
-};
+}
