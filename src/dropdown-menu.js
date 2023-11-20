@@ -1,4 +1,5 @@
-export default function dropdownMenu(title, pNode, ...contents) {
+/*
+function dropdownMenu(title, pNode, ...contents) {
   const menuContainer = document.createElement('div');
   menuContainer.style.visibility = 'collapse';
 
@@ -19,3 +20,11 @@ export default function dropdownMenu(title, pNode, ...contents) {
   });
   parent.parentNode.appendChild(menuContainer);
 }
+*/
+export default function applyDropdown(selector) {
+  document.querySelectorAll(selector).forEach((element)=>{
+    const dropdown = element;
+    dropdown.onclick = dropdown.classlist.toggle("hidden");
+  
+  });
+};
