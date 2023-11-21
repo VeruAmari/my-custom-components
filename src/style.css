@@ -1,6 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 :root {
-  color-scheme: light dark;
+  /*   color-scheme: light dark;*/
 }
 div {
   border: solid 1px white;
 }
+tr:hover {
+  background-color: aquamarine;
+}
+td {
+  padding: 1rem;
+}
+.dropdown {
+  background-color: antiquewhite;
+  display: grid;
+}
+
+/*
+.dropdown > * {
+  visibility: collapse;
+}
+.dropdown:hover > * {
+  visibility: visible;
+}
+*/

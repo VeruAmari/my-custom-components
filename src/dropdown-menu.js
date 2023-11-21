@@ -1,46 +1,32 @@
-/* eslint-disable no-param-reassign */
-/*
-function dropdownMenu(title, pNode, ...contents) {
-  const menuContainer = document.createElement('div');
-  menuContainer.style.visibility = 'collapse';
-
-  const parent = pNode;
-
-  // Make menuContainer collapsable on clicking
-  parent.onclick = () => {
-    const value =
-      menuContainer.style.visibility === 'collapse' ? 'visible' : 'collapse';
-    menuContainer.style.visibility = value;
-  };
-  const container = document.createElement('div');
-  container.textContent = title;
-  menuContainer.appendChild(container);
-  [...contents].forEach((element) => {
-    element.classlist.add('dropdown-item');
-    menuContainer.appendChild(element);
-  });
-  parent.parentNode.appendChild(menuContainer);
-}
-*/
-
-export default function applyDropdown(selector, height) {
+export default function dropdown(selector) {
   document.querySelectorAll(selector).forEach((element) => {
     console.log(element);
-    Array.from(element.children).forEach((child) => {
-      child.style.height = 0;
-      child.style.visibility = 'hidden';
+    element.setAttribute('tabindex', 0);
+
+    const children = Array.from(element.children);
+    children.forEach((child) => {
+      // child.style.height = 0;
+      child.setAttribute('style', 'visibility: collapse');
+      // child.style.visibility = 'collapse';
     });
-    element.onmouseover = () => {
-      Array.from(element.children).forEach((child) => {
-        child.style.height = height;
-        child.style.visibility = 'visible';
+
+    element.addEventListener('focus', () => {
+      children.forEach((child) => {
+        // child.style.height = height;
+        child.setAttribute('style', 'visibility: visible');
+        // child.style.visibility = 'visible';
       });
-    };
-    element.onmouseout = () => {
-      Array.from(element.children).forEach((child) => {
-        child.style.height = 0;
-        child.style.visibility = 'hidden';
+    });
+
+    element.addEventListener('focusout', () => {
+      children.forEach((child) => {
+        // child.style.height = 0;
+
+        child.setAttribute('style', 'visibility: collapse');
+        //  child.style.visibility = 'collapse';
       });
-    };
+    });
   });
 }
+
+dropdown('.dropdown');
