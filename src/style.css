@@ -14,11 +14,30 @@ tr:hover {
 td {
   padding: 1rem;
 }
-.dropdown {
+table {
   background-color: antiquewhite;
   display: grid;
 }
-
+.hamburger {
+  background: url(hamburger-2-svgrepo-com.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  background-color: rgb(177, 226, 210);
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+a {
+  padding: 1rem;
+  background-color: beige;
+  text-decoration: none;
+}
+a:hover {
+  background-color: aquamarine;
+}
 /*
 .dropdown > * {
   visibility: collapse;

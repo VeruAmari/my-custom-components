@@ -6,14 +6,18 @@ export default function dropdown(selector) {
     const children = Array.from(element.children);
     children.forEach((child) => {
       // child.style.height = 0;
-      child.setAttribute('style', 'visibility: collapse');
+      if (child !== element.firstElementChild) {
+        child.setAttribute('style', 'visibility: collapse');
+      }
       // child.style.visibility = 'collapse';
     });
 
     element.addEventListener('focus', () => {
       children.forEach((child) => {
         // child.style.height = height;
-        child.setAttribute('style', 'visibility: visible');
+        if (child !== element.firstElementChild) {
+          child.setAttribute('style', 'visibility: visible');
+        }
         // child.style.visibility = 'visible';
       });
     });
@@ -21,8 +25,9 @@ export default function dropdown(selector) {
     element.addEventListener('focusout', () => {
       children.forEach((child) => {
         // child.style.height = 0;
-
-        child.setAttribute('style', 'visibility: collapse');
+        if (child !== element.firstElementChild) {
+          child.setAttribute('style', 'visibility: collapse');
+        }
         //  child.style.visibility = 'collapse';
       });
     });
