@@ -19,8 +19,35 @@ const config = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.html$/i,
+        use: 'html-loader',
+      },
+      {
+        test: /\.(png|jpg|svg)$/i,
         type: 'asset/resource',
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              pngquant: {
+                quality: [0.9, 0.95],
+              },
+            },
+          },
+        ],
+        generator: {
+          filename: 'images/[name]-[hash][ext]',
+        },
+      },
+      {
+        test: /\.(png|jpg)$/i,
+        type: 'asset',
+        // ...snip...
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // Inline anything under 10kb
+          },
+        },
       },
     ],
   },

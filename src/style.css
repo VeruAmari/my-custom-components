@@ -19,12 +19,14 @@ table {
   display: grid;
 }
 .hamburger {
-  background: url(hamburger-2-svgrepo-com.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-  background-color: rgb(177, 226, 210);
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 30%;
+  background-color: aquamarine;
+}
+.hamburger:hover {
+  background-color: aqua;
 }
 .dropdown {
   display: flex;
