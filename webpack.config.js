@@ -23,7 +23,7 @@ const config = {
         use: 'html-loader',
       },
       {
-        test: /\.(png|jpg|svg)$/i,
+        test: /\.(png|jpg|svg|jpeg)$/i,
         type: 'asset/resource',
         use: [
           {
@@ -40,7 +40,7 @@ const config = {
         },
       },
       {
-        test: /\.(png|jpg)$/i,
+        test: /\.(png|jpg|svg|jpeg)$/i,
         type: 'asset',
         // ...snip...
         parser: {

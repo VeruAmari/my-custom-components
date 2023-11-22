@@ -1,13 +1,5 @@
-/* import hamburgerImage from './hamburger-2-svgrepo-com.svg';
-
-document.querySelectorAll('.hamburger').forEach((element) => {
-  element.setAttribute('src', hamburgerImage);
-});
-*/
-
 export default function dropdown(selector) {
   document.querySelectorAll(selector).forEach((element) => {
-    console.log(element);
     element.setAttribute('tabindex', 0);
 
     const children = Array.from(element.children);

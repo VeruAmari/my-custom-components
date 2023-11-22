@@ -1,32 +1,37 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 :root {
-  /*   color-scheme: light dark;*/
+  --color1: rgb(150, 143, 143);
+  --color2: rgb(170, 212, 252);
+  --color3: rgb(137, 123, 189);
+  --highlight1: aqua;
 }
+/* Hamburger Menu Styling */
 div {
-  border: solid 1px white;
+  /*border: solid 3px var(--color1);*/
 }
-tr:hover {
-  background-color: aquamarine;
+h1 {
+  font-size: larger;
+  border-bottom: 1px solid black;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-td {
-  padding: 1rem;
-}
-table {
-  background-color: antiquewhite;
+body {
   display: grid;
+  margin: 2rem;
 }
 .hamburger {
   max-width: 2.5rem;
   max-height: 2.5rem;
   padding: 0.5rem;
   border-radius: 30%;
-  background-color: aquamarine;
+  background-color: var(--color2);
 }
 .hamburger:hover {
-  background-color: aqua;
+  background-color: var(--highlight1);
 }
 .dropdown {
   display: flex;
@@ -34,17 +39,29 @@ table {
 }
 a {
   padding: 1rem;
-  background-color: beige;
+  background-color: var(--color2);
   text-decoration: none;
 }
 a:hover {
-  background-color: aquamarine;
+  background-color: var(--highlight1);
 }
-/*
-.dropdown > * {
-  visibility: collapse;
+
+/* Carousell Styling */
+
+.image.container > img {
+  max-height: 200px;
+  max-width: auto;
 }
-.dropdown:hover > * {
-  visibility: visible;
+.carousell {
+  border: 2px solid --color3;
+  border-radius: 15px;
+  max-height: 300px;
+  max-width: 350px;
+  overflow-y: scroll;
 }
-*/
+.image.container {
+  max-height: 100%;
+  width: fit-content;
+  display: flex;
+  gap: 1rem;
+}
