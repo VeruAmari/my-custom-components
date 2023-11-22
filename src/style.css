@@ -10,9 +10,6 @@
   --highlight1: aqua;
 }
 /* Hamburger Menu Styling */
-div {
-  /*border: solid 3px var(--color1);*/
-}
 h1 {
   font-size: larger;
   border-bottom: 1px solid black;
