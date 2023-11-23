@@ -1,5 +1,7 @@
-export default function carousell(selector, wSize, hSize) {
+export default function carousell(selector) {
   document.querySelectorAll(selector).forEach((element) => {
+    const wSize = element.offsetWidth;
+    const hSize = element.offsetHeight;
     element.setAttribute('style', 'position:relative');
     element.firstElementChild.setAttribute('style', 'position:relative;');
     console.log(element);
@@ -78,9 +80,9 @@ export default function carousell(selector, wSize, hSize) {
       if (direction === 'left') {
         move.setAttribute(
           'style',
-          `;position:absolute; height: ${hSize}px; width: ${Math.floor(
-            wSize / 12,
-          )}px;top:0px;`,
+          `;position:absolute; height: ${Math.floor(
+            hSize,
+          )}px; width: ${Math.floor(wSize / 12)}px;top:0px;`,
         );
         move.textContent = '<';
         move.classList.add('move', 'left');
@@ -149,4 +151,4 @@ This function can then be invoked to both JUMP to a certain image when clicking 
 I need to apply "position: relative" to the Div containing the images, and offset is the property I can use to move the div around.
 */
 
-carousell('.carousell', 300, 200);
+carousell('.carousell');

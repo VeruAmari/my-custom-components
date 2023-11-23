@@ -53,13 +53,15 @@ a:hover {
 
 .image.container > img {
   height: auto;
-  width: 300px;
+  width: 500px;
 }
 .carousell {
   border: 2px solid --color3;
   border-radius: 15px;
-  max-height: 200px;
-  max-width: 300px;
+
+  /* MUST EXPLISITLY SET SPECIFIC HEIGHT AND WIDTH OF CAROUSELL OR UI WILL BREAK */
+  height: 300px;
+  width: 500px;
   overflow-x: hidden;
   /* border: 1px solid black; */
 }
@@ -67,16 +69,10 @@ a:hover {
   max-height: 100%;
   width: fit-content;
   display: flex;
-  /*
-  gap: var(--spacing);
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-  */
   transition: left 600ms ease-in-out;
 }
 .move.left,
-.move.right,
-.dots-container {
+.move.right {
   border: 0;
   border-radius: 0;
   background-color: rgba(0, 0, 0, 0.25);
@@ -103,8 +99,8 @@ a:hover {
   height: 10px;
 }
 .dots:hover {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 1);
 }
 .currentSlide {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 1);
 }
