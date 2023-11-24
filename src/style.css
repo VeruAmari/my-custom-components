@@ -37,8 +37,22 @@ body {
   background-color: var(--highlight1);
 }
 .dropdown {
-  display: flex;
-  flex-direction: column;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  position: absolute;
+  z-index: 1;
+}
+.dropdown:focus{
+  .hamburger{
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+}}
+td{
+  display: grid;
+  min-width: 50vw;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 a {
   padding: 1rem;
@@ -103,4 +117,7 @@ a:hover {
 }
 .currentSlide {
   background-color: rgba(255, 255, 255, 1);
+}
+.blank{
+  padding: 2rem;
 }
